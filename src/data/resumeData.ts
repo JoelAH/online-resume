@@ -166,16 +166,19 @@ export const resumeData: ResumeData = {
       name: 'QuickRating',
       description:
         'A lightweight web application that allows users to quickly rate and review products or services. Built with React and TypeScript, featuring a clean UI and real-time rating aggregation.',
+      url: 'https://quickrating.page/',
     },
     {
       name: 'Chrome Extension - ChatGPT Folders',
       description:
         'A Chrome browser extension that adds folder organization capabilities to the ChatGPT interface, allowing users to categorize and manage their conversations efficiently.',
+      url: 'https://chromewebstore.google.com/detail/chatgpt-folders/lapefebfdhoomaehglkomljbpfbjcham',
     },
     {
       name: 'AI Review Scraper & Analyzer',
       description:
         'An automated tool that scrapes product reviews from various platforms and uses AI to analyze sentiment, extract key themes, and generate summary insights for decision-making.',
+      url: 'https://www.appreviewquest.com/',
     },
   ],
 

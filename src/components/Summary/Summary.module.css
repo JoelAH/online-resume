@@ -1,4 +1,48 @@
+/* ===== Hero wrapper ===== */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Animated gradient background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 173, 181, 0.08) 0%,
+    rgba(15, 15, 15, 1) 30%,
+    rgba(26, 26, 46, 0.6) 60%,
+    rgba(0, 173, 181, 0.05) 100%
+  );
+  background-size: 400% 400%;
+  animation: heroBgShift 12s ease infinite;
+}
+
+/* Floating orb — top right */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 173, 181, 0.12) 0%, transparent 70%);
+  z-index: -1;
+  animation: orbFloat 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Second floating orb via the inner wrapper */
 .summary {
+  position: relative;
   padding: var(--spacing-2xl) 0;
   max-width: var(--max-content-width);
   margin: 0 auto;
@@ -9,69 +53,245 @@
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+.summary::before {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -15%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(123, 104, 238, 0.08) 0%, transparent 70%);
+  z-index: -1;
+  animation: orbFloat2 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
 .summary.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* ===== Greeting line ===== */
+.greeting {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 var(--spacing-md) 0;
+  opacity: 0;
+  animation: none;
+}
+
+.visible .greeting {
+  animation: fadeInUp 0.6s ease 0.1s forwards;
+}
+
+/* ===== Name ===== */
 .name {
-  font-size: var(--font-size-3xl);
-  font-weight: 700;
-  margin: 0 0 var(--spacing-xs) 0;
-  background: linear-gradient(135deg, var(--color-accent), #7b68ee, var(--color-accent-hover), var(--color-accent));
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  margin: 0 0 var(--spacing-sm) 0;
+  line-height: 1.1;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    #7b68ee 30%,
+    var(--color-accent-hover) 60%,
+    #e0e0e0 100%
+  );
   background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientShift 6s ease infinite;
+  filter: drop-shadow(0 0 30px rgba(0, 173, 181, 0.2));
+  opacity: 0;
 }
 
+.visible .name {
+  animation: gradientShift 6s ease infinite, fadeInUp 0.7s ease 0.2s forwards;
+}
+
+/* ===== Title with accent bar ===== */
 .title {
-  font-size: var(--font-size-lg);
-  color: var(--color-accent);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
   margin: 0 0 var(--spacing-lg) 0;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  opacity: 0;
 }
 
+.visible .title {
+  animation: fadeInUp 0.6s ease 0.35s forwards;
+}
+
+.title::before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ===== Summary text ===== */
 .text {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
   line-height: 1.8;
-  margin: 0 0 var(--spacing-lg) 0;
-  max-width: 720px;
+  margin: 0 0 var(--spacing-xl) 0;
+  max-width: 640px;
+  opacity: 0;
 }
 
+.visible .text {
+  animation: fadeInUp 0.6s ease 0.5s forwards;
+}
+
+/* ===== Contact buttons ===== */
 .contact {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   flex-wrap: wrap;
+  opacity: 0;
+}
+
+.visible .contact {
+  animation: fadeInUp 0.6s ease 0.65s forwards;
 }
 
 .contactLink {
-  color: var(--color-link);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.65rem 1.5rem;
+  border-radius: 50px;
   font-size: var(--font-size-sm);
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  transition: color 0.2s ease, text-shadow 0.2s ease;
+  transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 
-.contactLink::after {
+.contactLink::before {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-accent);
-  transition: width 0.3s ease;
+  inset: 0;
+  border-radius: 50px;
+  opacity: 0;
+  background: linear-gradient(135deg, var(--color-accent), #7b68ee);
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
-.contactLink:hover {
+.contactLinkPrimary {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  color: #0f0f0f;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 173, 181, 0.3);
+}
+
+.contactLinkPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(0, 173, 181, 0.45);
+  text-decoration: none;
+  color: #0f0f0f;
+}
+
+.contactLinkPrimary:hover::before {
+  opacity: 1;
+}
+
+.contactLinkSecondary {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid rgba(0, 173, 181, 0.4);
+}
+
+.contactLinkSecondary:hover {
+  background: rgba(0, 173, 181, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(0, 173, 181, 0.15);
+  transform: translateY(-2px);
+  text-decoration: none;
   color: var(--color-accent-hover);
-  text-shadow: 0 0 10px var(--glow-accent);
 }
 
-.contactLink:hover::after {
-  width: 100%;
+/* ===== Decorative grid lines ===== */
+.gridDecor {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(0, 173, 181, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 173, 181, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ===== Keyframes ===== */
+@keyframes heroBgShift {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 20px) scale(1.05); }
+  66% { transform: translate(15px, -15px) scale(0.97); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(25px, -20px) scale(1.08); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero::after {
+    width: 300px;
+    height: 300px;
+    top: -5%;
+    right: -15%;
+  }
+
+  .summary::before {
+    width: 250px;
+    height: 250px;
+  }
+
+  .title::before {
+    width: 24px;
+  }
+
+  .contactLink {
+    padding: 0.55rem 1.2rem;
+    font-size: var(--font-size-sm);
+  }
 }
