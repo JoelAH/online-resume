@@ -169,15 +169,15 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
 - [x] 9. Checkpoint - Verify full application
   - Ensure all tests pass, run `npm run build` to verify static output, ask the user if questions arise.
 
-- [ ] 10. Implement AWS CDK infrastructure stack
-  - [ ] 10.1 Set up CDK project structure
+- [x] 10. Implement AWS CDK infrastructure stack
+  - [x] 10.1 Set up CDK project structure
     - Create `infra/` directory with `bin/infra.ts` and `lib/portfolio-stack.ts`
     - Install CDK dependencies: `aws-cdk-lib`, `constructs`
     - Create `infra/tsconfig.json` for the CDK TypeScript project
     - Create a `cdk.json` configuration file pointing to the infra entry point
     - _Requirements: 10.1_
 
-  - [ ] 10.2 Implement the PortfolioStack CDK construct
+  - [x] 10.2 Implement the PortfolioStack CDK construct
     - In `infra/lib/portfolio-stack.ts`, create a CDK stack that provisions:
       - An S3 bucket with public access blocked (`blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL`)
       - An Origin Access Identity (OAI) granting CloudFront read access to the S3 bucket
@@ -195,7 +195,7 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Verify `BucketDeployment` construct references the correct source path
     - _Requirements: 10.1, 10.2, 10.3, 10.4, 10.5_
 
-- [ ] 11. Final checkpoint - Ensure all tests pass
+- [x] 11. Final checkpoint - Ensure all tests pass
   - Run all unit tests, property-based tests, and CDK assertion tests. Ensure `npm run build` produces a clean `dist/` output. Ask the user if questions arise.
 
 ## Notes
