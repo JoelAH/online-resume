@@ -32,15 +32,15 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Export both the interfaces and the `resumeData` constant
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 4.4, 5.1, 6.1, 7.1, 8.1, 8.2, 8.3, 11.3, 12.1, 12.2_
 
-- [ ] 3. Implement Navigation component
-  - [ ] 3.1 Create Navigation component with sticky header and smooth scrolling
+- [x] 3. Implement Navigation component
+  - [x] 3.1 Create Navigation component with sticky header and smooth scrolling
     - Create `src/components/Navigation/Navigation.tsx` and `Navigation.module.css`
     - Render a `<nav>` element with `aria-label="Main navigation"` containing anchor links for all six sections: Summary, Work Experience, Tech Stack, Side Projects, Certifications, Education
     - Implement click handlers that call `document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' })` and prevent default anchor behavior
     - Style as a sticky/fixed header using `position: sticky; top: 0` with dark background and accent-colored links
     - _Requirements: 2.1, 2.2, 2.3_
 
-  - [ ] 3.2 Implement mobile hamburger menu for viewports below 768px
+  - [x] 3.2 Implement mobile hamburger menu for viewports below 768px
     - Add a hamburger icon button with `aria-expanded` and `aria-controls` attributes
     - Use `useState` to manage open/closed state
     - Render a mobile menu overlay with `aria-hidden` when closed
@@ -54,8 +54,8 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Verify `aria-expanded` attribute updates on toggle
     - _Requirements: 2.1, 2.4_
 
-- [ ] 4. Implement Summary and Experience sections
-  - [ ] 4.1 Create Summary component
+- [x] 4. Implement Summary and Experience sections
+  - [x] 4.1 Create Summary component
     - Create `src/components/Summary/Summary.tsx` and `Summary.module.css`
     - Render the name as an `<h1>` heading
     - Render professional summary as paragraph text
@@ -71,7 +71,7 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Verify no phone number pattern appears in rendered output
     - _Requirements: 3.1, 3.3, 3.4, 3.5, 12.1_
 
-  - [ ] 4.3 Create Experience component
+  - [x] 4.3 Create Experience component
     - Create `src/components/Experience/Experience.tsx` and `Experience.module.css`
     - Iterate over the experience array and render each entry with company name, job title, location, and date range
     - Render accomplishments as a `<ul>` list for each entry
