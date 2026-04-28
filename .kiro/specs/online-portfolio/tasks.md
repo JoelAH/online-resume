@@ -88,11 +88,11 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Generate random `ExperienceEntry` objects with non-empty fields using fast-check arbitraries, render the Experience component, and verify the rendered output contains the company name, job title, location, date range, and every accomplishment string
     - **Validates: Requirements 4.2, 4.3**
 
-- [ ] 5. Checkpoint - Verify core sections
+- [x] 5. Checkpoint - Verify core sections
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 6. Implement TechStack and Projects sections
-  - [ ] 6.1 Create TechStack component
+- [x] 6. Implement TechStack and Projects sections
+  - [x] 6.1 Create TechStack component
     - Create `src/components/TechStack/TechStack.tsx` and `TechStack.module.css`
     - Render four category groups: Languages/Frameworks, Cloud/Backend, Databases, Tools
     - Render each skill as a distinct badge/chip element
@@ -109,7 +109,7 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Generate pairs of `SkillEntry` with `isCurrent: true` and `isCurrent: false`, render them within a TechStack component, and verify the rendered elements have different CSS class names
     - **Validates: Requirements 5.3**
 
-  - [ ] 6.4 Create Projects component
+  - [x] 6.4 Create Projects component
     - Create `src/components/Projects/Projects.tsx` and `Projects.module.css`
     - Render each project as a visually distinct card element
     - Display project name and description on each card
@@ -126,13 +126,13 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Verify project cards are distinct elements
     - _Requirements: 6.1, 6.4_
 
-- [ ] 7. Implement Certifications and Education sections
-  - [ ] 7.1 Create Certifications component
+- [x] 7. Implement Certifications and Education sections
+  - [x] 7.1 Create Certifications component
     - Create `src/components/Certifications/Certifications.tsx` and `Certifications.module.css`
     - Render each certification as a distinct visual element (card or badge)
     - _Requirements: 7.1, 7.2_
 
-  - [ ] 7.2 Create Education component
+  - [x] 7.2 Create Education component
     - Create `src/components/Education/Education.tsx` and `Education.module.css`
     - Render institution name, degree, and attendance period
     - _Requirements: 8.1, 8.2, 8.3_

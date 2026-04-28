@@ -1,0 +1,46 @@
+.education {
+  padding: var(--spacing-2xl) 0;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+.heading {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-xl) 0;
+  color: var(--color-text-primary);
+}
+
+.card {
+  background-color: var(--color-bg-card);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-accent);
+}
+
+.institution {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--color-text-primary);
+}
+
+.degree {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.period {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  font-weight: 500;
+  margin: 0;
+}
