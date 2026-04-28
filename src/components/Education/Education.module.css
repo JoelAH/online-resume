@@ -11,18 +11,53 @@
   font-weight: 700;
   margin: 0 0 var(--spacing-xl) 0;
   color: var(--color-text-primary);
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+  border-radius: 2px;
+  transition: width 0.6s ease 0.3s;
+}
+
+.headingVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.headingVisible::after {
+  width: 60px;
 }
 
 .card {
-  background-color: var(--color-bg-card);
-  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-bg-card), rgba(26, 26, 46, 0.5));
+  border-radius: 12px;
   padding: var(--spacing-lg);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: border-color 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
-  border-color: var(--color-accent);
+  border-color: rgba(0, 173, 181, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 173, 181, 0.12);
+  transform: translateY(-3px);
 }
 
 .institution {

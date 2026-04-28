@@ -2,11 +2,18 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--color-bg-secondary);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 173, 181, 0.1);
   height: var(--nav-height);
   display: flex;
   align-items: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav:hover {
+  box-shadow: 0 2px 20px rgba(0, 173, 181, 0.08);
 }
 
 .inner {
@@ -34,12 +41,30 @@
   font-weight: 500;
   letter-spacing: 0.02em;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 1px;
+  transition: width 0.3s ease;
 }
 
 .link:hover {
   color: var(--color-accent-hover);
+  text-shadow: 0 0 12px var(--glow-accent);
   text-decoration: none;
+}
+
+.link:hover::after {
+  width: 100%;
 }
 
 /* Hamburger button — hidden on desktop */
@@ -76,9 +101,11 @@
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background-color: var(--color-bg-secondary);
+    background-color: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: var(--spacing-md) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(0, 173, 181, 0.1);
   }
 
   .linksOpen {
@@ -88,5 +115,9 @@
   .link {
     padding: var(--spacing-sm) var(--spacing-lg);
     font-size: var(--font-size-base);
+  }
+
+  .link::after {
+    display: none;
   }
 }
