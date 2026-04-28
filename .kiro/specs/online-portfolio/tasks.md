@@ -25,8 +25,8 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Import `global.css` in `src/main.tsx`
     - _Requirements: 1.1, 1.2, 1.3, 1.4_
 
-- [ ] 2. Implement data layer and type definitions
-  - [ ] 2.1 Create TypeScript interfaces and resume data file
+- [x] 2. Implement data layer and type definitions
+  - [x] 2.1 Create TypeScript interfaces and resume data file
     - Create `src/data/resumeData.ts` with all interfaces: `ResumeData`, `SummaryData`, `ExperienceEntry`, `TechCategory`, `SkillEntry`, `TechStackData`, `ProjectEntry`, `CertificationEntry`, `EducationEntry`
     - Populate the data object with Joel A. Hyman's resume content: summary (name, title, summaryText, email, linkedInUrl — no phone field), three experience entries in reverse chronological order, four tech categories with skills marked as current or previously used, three projects (QuickRating, Chrome Extension - ChatGPT Folders, AI Review Scraper & Analyzer), two certifications, and education at Northern Caribbean University
     - Export both the interfaces and the `resumeData` constant
