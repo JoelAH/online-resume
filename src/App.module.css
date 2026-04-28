@@ -1,0 +1,36 @@
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  padding-top: calc(var(--nav-height) + var(--spacing-lg));
+}
+
+.section {
+  margin-bottom: var(--spacing-2xl);
+  scroll-margin-top: var(--nav-height);
+}
+
+/* Mobile: single-column vertical stack below 768px */
+@media (max-width: 767px) {
+  .main {
+    padding: var(--spacing-sm);
+    padding-top: calc(var(--nav-height) + var(--spacing-md));
+  }
+
+  .section {
+    margin-bottom: var(--spacing-xl);
+  }
+}
+
+/* Tablet and desktop: wider layout at 768px and above */
+@media (min-width: 768px) {
+  .main {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    padding-top: calc(var(--nav-height) + var(--spacing-2xl));
+  }
+}

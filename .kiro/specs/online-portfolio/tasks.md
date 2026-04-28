@@ -142,20 +142,20 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Verify institution, degree, and period are rendered for Education
     - _Requirements: 7.1, 8.1, 8.2, 8.3_
 
-- [ ] 8. Compose App component and responsive layout
-  - [ ] 8.1 Create App component that wires all sections together
+- [x] 8. Compose App component and responsive layout
+  - [x] 8.1 Create App component that wires all sections together
     - Create `src/App.tsx` and `src/App.module.css`
     - Import `resumeData` and pass relevant data to each section component as props
     - Render `<Navigation />` followed by each section component in order: Summary, Experience, TechStack, Projects, Certifications, Education
     - Wrap each section in a `<section>` element with an `id` attribute matching the navigation link targets
     - _Requirements: 11.2, 11.3_
 
-  - [ ] 8.2 Update `src/main.tsx` entry point
+  - [x] 8.2 Update `src/main.tsx` entry point
     - Render the `<App />` component into the root DOM element
     - Import `global.css` for theme styles
     - _Requirements: 11.1_
 
-  - [ ] 8.3 Implement responsive layout styles
+  - [x] 8.3 Implement responsive layout styles
     - Add responsive CSS rules: single-column vertical stack below 768px, wider multi-column layouts at 768px and above
     - Ensure no horizontal overflow from 320px to 2560px viewports
     - Use `max-width: var(--max-content-width)` with auto margins for content centering
@@ -166,7 +166,7 @@ Build a dark-themed, single-page React + TypeScript portfolio site for Joel A. H
     - Verify no phone number pattern (e.g., regex for phone formats) appears anywhere in the rendered App output
     - _Requirements: 11.2, 12.1, 12.2_
 
-- [ ] 9. Checkpoint - Verify full application
+- [x] 9. Checkpoint - Verify full application
   - Ensure all tests pass, run `npm run build` to verify static output, ask the user if questions arise.
 
 - [ ] 10. Implement AWS CDK infrastructure stack

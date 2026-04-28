@@ -41,6 +41,10 @@
   --nav-height: 64px;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
@@ -48,6 +52,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  overflow-x: hidden;
+  min-width: 320px;
 }
 
 a {
