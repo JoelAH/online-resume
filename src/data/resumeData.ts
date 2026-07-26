@@ -180,6 +180,24 @@ export const resumeData: ResumeData = {
         'An automated tool that scrapes product reviews from various platforms and uses AI to analyze sentiment, extract key themes, and generate summary insights for decision-making.',
       url: 'https://www.appreviewquest.com/',
     },
+    {
+      name: 'DevMockview',
+      description:
+        'An AI-powered mock interview SaaS where software engineers practice spoken behavioral and architectural interviews with a realistic AI interviewer. Features voice interaction with adaptive follow-ups and scored feedback reports.',
+      url: 'https://devmockview.com/',
+    },
+    {
+      name: 'iKnowScores',
+      description:
+        'A mobile football score prediction app for casual fans. Predict match scores before kickoff, earn points for accuracy, compete on a global leaderboard, and share branded prediction cards. Built with React Native, Expo, AWS CDK, and Supabase.',
+      url: 'https://iknowscores.web.app/',
+    },
+    {
+      name: 'FocusSam',
+      description:
+        'A mobile AI assistant designed to help users overcome procrastination, overwhelm, and task paralysis. Breaks tasks into the smallest actionable steps to help people move from intention to action.',
+      url: 'https://apps.apple.com/us/app/start-tasks-focus-focussam/id6782120190',
+    },
   ],
 
   certifications: [
