@@ -4,6 +4,7 @@ export interface SummaryData {
   summaryText: string;
   email: string;
   linkedInUrl: string;
+  githubUrl: string;
   // Note: no phone field — excluded by design for privacy
 }
 
@@ -64,6 +65,7 @@ export const resumeData: ResumeData = {
       'Full Stack Software Engineer with over 10 years of experience building scalable web applications and cloud-based solutions. Specializing in React, TypeScript, and AWS, with a focus on delivering clean, maintainable code and intuitive user experiences.',
     email: 'joelhyman.mail@gmail.com',
     linkedInUrl: 'https://www.linkedin.com/in/joel-a-hyman',
+    githubUrl: 'https://github.com/JoelAH',
   },
 
   experience: [

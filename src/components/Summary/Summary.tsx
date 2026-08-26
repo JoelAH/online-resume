@@ -37,6 +37,14 @@ export default function Summary({ data }: SummaryProps) {
           >
             LinkedIn ↗
           </a>
+          <a
+            href={data.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.contactLink} ${styles.contactLinkSecondary}`}
+          >
+            GitHub ↗
+          </a>
         </div>
       </div>
     </div>
